@@ -39,7 +39,9 @@ namespace Databinding
 
         private void btnSet_Click(object sender, RoutedEventArgs e)
         {
-            objectPerson.Fname = textFname.Text;
+            objectPerson.Fname = "Lisa";
         }
+
+ 
     }
 }

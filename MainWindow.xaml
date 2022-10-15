@@ -1,4 +1,4 @@
-﻿<Window x:Class="Databinding.MainWindow"
+﻿<Window x:Class="Databinding.MainWindow" 
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Databinding"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    
+    <Grid x:Name="myGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="174*"/>
             <ColumnDefinition Width="200*"/>
@@ -21,7 +22,8 @@
             <RowDefinition Height="66*"/>
             <RowDefinition Height="98*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="textFname" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Fname, Mode=TwoWay}"/>
+        <TextBox x:Name="textFname" Grid.Column="1" Grid.Row="2" TextWrapping="Wrap" Text="{Binding Path=Fname, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+        <Button x:Name="btnSet" Grid.Column="2" Content="Set object value" Grid.Row="1" Click="btnSet_Click"/>
         <Button x:Name="btnCheck" Grid.Column="2" Content="Check object value" Grid.Row="3" Click="btnCheck_Click"/>
         <TextBlock x:Name="tbCheck" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" Text="{Binding Fname}"/>
 
